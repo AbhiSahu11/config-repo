@@ -58,14 +58,6 @@ spring:
             - Path=/order-service/**
           filters:
             - RewritePath=/order-service/(?<path>.*), /$\{path}
-            - name: RequestRateLimiter
-              args:
-                redis-rate-limiter.replenishRate: 5
-                redis-rate-limiter.burstCapacity: 10
-            - name: CircuitBreaker
-              args:
-                name: orderServiceCircuitBreaker
-                fallbackUri: forward:/fallback/order-fallback
   redis:
     host: 127.0.0.1
     port: 6379
