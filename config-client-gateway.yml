@@ -44,14 +44,6 @@ spring:
             - Path=/customer-service/**
           filters:
             - RewritePath=/customer-service/(?<path>.*), /$\{path}
-            - name: RequestRateLimiter
-              args:
-                redis-rate-limiter.replenishRate: 5
-                redis-rate-limiter.burstCapacity: 10
-            - name: CircuitBreaker
-              args:
-                name: customerServiceCircuitBreaker
-                fallbackUri: forward:/fallback/customer-fallback
         - id: order-service
           uri: lb://order-service
           predicates:
