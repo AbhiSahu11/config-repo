@@ -34,7 +34,6 @@ spring:
               args:
                 redis-rate-limiter.replenishRate: 5
                 redis-rate-limiter.burstCapacity: 10
-                key-resolver: "#{@authHeaderResolver}"
             - name: CircuitBreaker
               args:
                 name: queryServiceCircuitBreaker
@@ -49,7 +48,6 @@ spring:
               args:
                 redis-rate-limiter.replenishRate: 5
                 redis-rate-limiter.burstCapacity: 10
-                key-resolver: "#{@authHeaderResolver}"
             - name: CircuitBreaker
               args:
                 name: customerServiceCircuitBreaker
@@ -64,7 +62,6 @@ spring:
               args:
                 redis-rate-limiter.replenishRate: 5
                 redis-rate-limiter.burstCapacity: 10
-                key-resolver: "#{@authHeaderResolver}"
             - name: CircuitBreaker
               args:
                 name: orderServiceCircuitBreaker
