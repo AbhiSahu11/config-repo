@@ -6,6 +6,9 @@ server:
 customer-service:
   version: v2
   custom-audience: customer-service
+  payment-request-topic-name: payment-request
+  payment-response-topic-name: payment-response
+  customer-topic-name: customer
 
 spring:
   cloud:
