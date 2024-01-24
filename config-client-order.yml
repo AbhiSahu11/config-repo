@@ -35,6 +35,8 @@ spring:
     password: 654321
     driver-class-name: org.postgresql.Driver
     platform: postgres
+    schema: classpath:init-schema.sql
+    initialization-mode: always
 
 springdoc:
   api-docs:
